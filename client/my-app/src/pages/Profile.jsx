@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL ||
+    "https://online-shop-api-w40i.onrender.com";
 
 export default function Profile() {
     const [user, setUser] = useState(null);
