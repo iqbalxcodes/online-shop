@@ -1,14 +1,18 @@
+// productService.js
+const API_URL = import.meta.env.VITE_API_URL || "https://online-shop-api-w40i.onrender.com";
+
 export async function getProducts() {
-    const response = await fetch("http://localhost:5000/api/products");
+    const response = await fetch(`${API_URL}/api/products`);
 
     if (!response.ok) {
         throw new Error("Gagal mengambil produk");
     }
+
     return response.json();
 }
 
 export async function getProductById(id) {
-    const response = await fetch(`http://localhost:5000/api/products/${id}`);
+    const response = await fetch(`${API_URL}/api/products/${id}`);
 
     if (!response.ok) {
         if (response.status === 404) {
@@ -17,5 +21,6 @@ export async function getProductById(id) {
 
         throw new Error("Gagal mengambil produk");
     }
+
     return response.json();
 }
